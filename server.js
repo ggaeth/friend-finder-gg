@@ -8,8 +8,8 @@ var path = require('path');
 var friends = require('./app/data/friends.js');
 // =============================================================
 var app = express();
-//var PORT = process.env.PORT || 4000; // Sets an initial port.
-var PORT = 4000;
+var PORT = process.env.PORT || 4000; // Sets an initial port.
+//var PORT = 4000;
 
 //makes static assets in the public folder available (style.css)
 app.use(express.static('app/public'));
@@ -24,8 +24,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes.js')(app);
 
-app.listen(PORT, function() {
-  console.log("Server listening on: http://localhost:" + PORT);
-});
-//app.listen(process.env.PORT || 4000);
+//app.listen(PORT, function() {
+//  console.log("Server listening on: http://localhost:" + PORT);
+//});
+app.listen(PORT);
 //app.listen(4000);
